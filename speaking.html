@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaking & Partnerships | Sofia Kakkava</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        /* CORE SETTINGS */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: #000;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* COLORS */
+        .bg-cream {
+            background-color: #FFFCF8;
+        }
+
+        .text-gold {
+            color: #d4af37;
+        }
+
+        .border-gold {
+            border-color: #d4af37;
+        }
+
+        /* ANIMATIONS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* SHIMMER BUTTON */
+        .shimmer-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shimmer-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+
+            20% {
+                left: 100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        /* KEYNOTE CARDS */
+        .keynote-card {
+            border: 1px solid #f3f4f6;
+            padding: 3rem;
+            position: relative;
+            transition: all 0.4s ease;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .keynote-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            border-color: #000;
+        }
+
+        .keynote-card .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: #f3f4f6;
+            margin-bottom: 1.5rem;
+            transition: color 0.4s ease;
+        }
+
+        .keynote-card:hover .number {
+            color: #d4af37;
+        }
+
+        /* IMAGE HOVER */
+        .speaker-img {
+            transition: transform 0.6s ease;
+        }
+
+        .speaker-img-wrapper:hover .speaker-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav
+        class="fixed top-0 left-0 w-full z-50 px-8 py-6 md:px-12 flex justify-between items-center bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div class="text-xl md:text-2xl font-bold italic tracking-tighter uppercase font-sans">
+            SOFIA KAKKAVA<span class="text-[0.6em] align-top relative top-1 not-italic">®</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-[10px] font-bold tracking-[0.2em] uppercase">
+            <a href="index.html" class="hover:text-gold transition">Home</a>
+            <a href="apply.html" class="hover:text-gold transition">Programs</a>
+            <a href="#contact" class="hover:text-gold transition">Book Sofia</a>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-20 px-6 bg-cream text-center">
+        <div class="max-w-5xl mx-auto fade-in">
+            <span
+                class="inline-block px-4 py-1 mb-6 text-[10px] font-bold tracking-[0.2em] uppercase bg-black text-white rounded-full">Global
+                Speaker & Advisor</span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif mb-8 leading-[0.95] text-black">
+                Transformational Talks. <br>
+                <span class="italic text-gray-500 font-normal">Strategic Impact.</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-light max-w-2xl mx-auto mb-12">
+                Sofia creates experiences, not presentations. She blends strategy, psychology, and real-world execution
+                to wake up audiences and give them a roadmap for freedom.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#contact"
+                    class="shimmer-btn bg-black text-white px-12 py-5 rounded-lg font-bold text-xs uppercase tracking-[0.2em] hover:bg-gray-900 transition">
+                    Inquire For Booking
+                </a>
+                <a href="#topics"
+                    class="bg-transparent border border-black text-black px-12 py-5 rounded-lg font-bold text-xs uppercase tracking-[0.2em] hover:bg-black hover:text-white transition">
+                    View Speaking Topics
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 border-y border-gray-100 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-[10px] uppercase tracking-[0.3em] text-gray-400 mb-8">Sofia has commanded stages at</p>
+            <div
+                class="flex flex-wrap justify-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <span class="text-xl font-serif font-bold">Global Leadership Summits</span>
+                <span class="text-xl font-serif font-bold">Entrepreneurship Retreats</span>
+                <span class="text-xl font-serif font-bold">Digital Innovation Conferences</span>
+                <span class="text-xl font-serif font-bold">Women in Business</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 bg-white">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div class="speaker-img-wrapper relative rounded-[2rem] overflow-hidden shadow-2xl fade-in">
+                <img src="https://static.wixstatic.com/media/7c6d65_2d4b959c242b4ac1968eaade077dc567~mv2.jpg/v1/fill/w_484,h_727,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6793.jpg"
+                    alt="Sofia Kakkava Speaking" class="speaker-img w-full h-auto object-cover">
+            </div>
+
+            <div class="fade-in delay-100">
+                <h2 class="text-4xl md:text-5xl font-serif mb-8 leading-tight">I Don't Teach Theory. <br> <span
+                        class="italic text-gray-500">I Teach What I've Lived.</span></h2>
+                <div class="space-y-6 text-gray-600 font-light text-lg leading-relaxed">
+                    <p>
+                        My story spans 50+ countries. I have helped thousands of coaches and founders build thriving
+                        businesses from the ground up.
+                    </p>
+                    <p>
+                        When I step on stage, my goal is simple: to give people the clarity and conviction they need to
+                        change the direction of their life, today.
+                    </p>
+                    <p>
+                        Whether it's an intimate workshop or a global summit, I leave audiences with a new identity as
+                        leaders and a strategic path forward.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid grid-cols-2 gap-8 border-t border-gray-100 pt-8">
+                    <div>
+                        <div class="text-4xl font-serif font-bold text-black mb-2">50+</div>
+                        <div class="text-[10px] uppercase tracking-[0.2em] text-gray-500">Countries Visited</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-serif font-bold text-black mb-2">1000+</div>
+                        <div class="text-[10px] uppercase tracking-[0.2em] text-gray-500">Founders Impacted</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="topics" class="py-32 bg-gray-50 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 fade-in">
+                <h2 class="text-4xl md:text-6xl font-serif mb-6">Signature Keynotes</h2>
+                <p class="text-gray-500 uppercase tracking-[0.2em] text-xs">Curated for Impact & Action</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="keynote-card fade-in delay-100 rounded-[2rem]">
+                    <div class="number">01</div>
+                    <h3 class="text-2xl font-bold font-serif mb-4">The Freedom Office</h3>
+                    <div class="h-px w-12 bg-black mb-6"></div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        <strong>Building a Business Without Borders.</strong> How to create a business that supports
+                        your lifestyle, your vision, and your freedom, rather than a job that traps you.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[9px] bg-gray-100 px-3 py-1 rounded-full uppercase tracking-wide">Lifestyle
+                            Design</span>
+                        <span class="text-[9px] bg-gray-100 px-3 py-1 rounded-full uppercase tracking-wide">Remote
+                            Work</span>
+                    </div>
+                </div>
+
+                <div class="keynote-card fade-in delay-200 rounded-[2rem]">
+                    <div class="number">02</div>
+                    <h3 class="text-2xl font-bold font-serif mb-4">Scaling Global Brands</h3>
+                    <div class="h-px w-12 bg-black mb-6"></div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        <strong>Thriving in the Digital Era.</strong> Mastering visibility, storytelling, content, and
+                        community to build online authority that converts into revenue.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[9px] bg-gray-100 px-3 py-1 rounded-full uppercase tracking-wide">Digital
+                            Strategy</span>
+                        <span
+                            class="text-[9px] bg-gray-100 px-3 py-1 rounded-full uppercase tracking-wide">Branding</span>
+                    </div>
+                </div>
+
+                <div class="keynote-card fade-in delay-300 rounded-[2rem]">
+                    <div class="number">03</div>
+                    <h3 class="text-2xl font-bold font-serif mb-4">Future of Coaching</h3>
+                    <div class="h-px w-12 bg-black mb-6"></div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        <strong>Innovation & Opportunity.</strong> Analyzing the trends and global opportunities in the
+                        education space. How to position yourself for the rising demand.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="text-[9px] bg-gray-100 px-3 py-1 rounded-full uppercase tracking-wide">EdTech</span>
+                        <span
+                            class="text-[9px] bg-gray-100 px-3 py-1 rounded-full uppercase tracking-wide">Leadership</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 px-6 bg-cream text-center">
+        <div class="max-w-3xl mx-auto fade-in">
+            <h2 class="text-5xl md:text-7xl font-serif mb-8 leading-tight">Ready To Inspire <br> <span
+                    class="italic text-gray-400">Your Audience?</span></h2>
+            <p class="text-xl text-gray-600 mb-12 font-light">
+                If your audience is hungry for growth, leadership, and purpose, I can't wait to be part of their
+                journey.
+            </p>
+
+            <div class="bg-white p-12 rounded-[2.5rem] shadow-xl border border-gray-100">
+                <form class="space-y-6 text-left">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="text-[10px] uppercase tracking-widest font-bold text-gray-400 mb-2 block">Your
+                                Name</label>
+                            <input type="text"
+                                class="w-full h-12 border-b border-gray-200 focus:border-black outline-none transition"
+                                placeholder="Jane Doe">
+                        </div>
+                        <div>
+                            <label
+                                class="text-[10px] uppercase tracking-widest font-bold text-gray-400 mb-2 block">Organization</label>
+                            <input type="text"
+                                class="w-full h-12 border-b border-gray-200 focus:border-black outline-none transition"
+                                placeholder="Company / Event Name">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-[10px] uppercase tracking-widest font-bold text-gray-400 mb-2 block">Event
+                            Details</label>
+                        <textarea
+                            class="w-full h-32 border-b border-gray-200 focus:border-black outline-none transition resize-none"
+                            placeholder="Tell us about the event, dates, and what you are looking for..."></textarea>
+                    </div>
+                    <button
+                        class="shimmer-btn w-full bg-black text-white h-16 rounded-xl font-bold uppercase tracking-[0.2em] text-xs hover:bg-gray-900 transition mt-6">
+                        Submit Inquiry
+                    </button>
+                </form>
+                <div class="mt-8 text-center">
+                    <p class="text-xs text-gray-400">Or email us directly at <a href="mailto:hello@sofiakakkava.com"
+                            class="text-black font-bold underline">hello@sofiakakkava.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white py-12 text-center border-t border-gray-100">
+        <p class="text-[10px] uppercase tracking-[0.2em] text-gray-400">© 2026 Sofia Kakkava Consulting</p>
+    </footer>
+
+    <script>
+        // Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
