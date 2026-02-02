@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Mastery Courses | Sofia Kakkava</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        /* CORE SETTINGS */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: #000;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* COLORS */
+        .bg-cream {
+            background-color: #FFFCF8;
+        }
+
+        .text-gold {
+            color: #d4af37;
+        }
+
+        .bg-gold {
+            background-color: #d4af37;
+        }
+
+        .border-gold {
+            border-color: #d4af37;
+        }
+
+        /* ANIMATIONS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* NAV LINKS */
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #d4af37;
+            transition: width 0.3s ease-out;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: #d4af37;
+        }
+
+        /* COURSE CARDS */
+        .course-card {
+            border: 1px solid #f3f4f6;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            border-color: #000;
+        }
+
+        .course-img {
+            transition: transform 0.7s ease;
+        }
+
+        .course-card:hover .course-img {
+            transform: scale(1.05);
+        }
+
+        /* SHIMMER BUTTON */
+        .shimmer-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shimmer-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+
+            20% {
+                left: 100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        /* FAQ ACCORDION */
+        .faq-item {
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-content {
+            max-height: 200px;
+            padding-bottom: 1rem;
+        }
+
+        .faq-item.active svg {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav
+        class="fixed top-0 left-0 w-full z-50 px-8 py-6 md:px-12 flex justify-between items-center bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-300">
+        <a href="index.html"
+            class="text-xl md:text-2xl font-bold italic tracking-tighter uppercase font-sans hover:opacity-80 transition">
+            SOFIA KAKKAVA<span class="text-[0.6em] align-top relative top-1 not-italic">®</span>
+        </a>
+        <div class="hidden md:flex gap-8 items-center">
+            <a href="index.html"
+                class="nav-link text-[10px] font-bold tracking-[0.2em] uppercase transition-colors">Home</a>
+            <a href="apply.html"
+                class="nav-link text-[10px] font-bold tracking-[0.2em] uppercase transition-colors">Apply</a>
+            <a href="courses.html"
+                class="nav-link text-[10px] font-bold tracking-[0.2em] uppercase transition-colors text-gold">Courses</a>
+            <a href="#bundle"
+                class="shimmer-btn px-6 py-3 bg-black text-white text-[9px] font-bold tracking-[0.2em] uppercase rounded-lg hover:bg-gray-800 hover:-translate-y-1 transition-all duration-300 shadow-md">
+                Get Access
+            </a>
+        </div>
+        <a href="#bundle"
+            class="md:hidden text-[10px] font-bold tracking-[0.2em] uppercase border-b border-black pb-0.5">
+            Get Bundle
+        </a>
+    </nav>
+
+    <section class="pt-40 pb-24 px-6 text-center bg-cream border-b border-gray-100">
+        <div class="max-w-4xl mx-auto fade-in">
+            <span
+                class="inline-block px-4 py-1 mb-6 text-[10px] font-bold tracking-[0.2em] uppercase bg-black text-white rounded-full">The
+                Self-Study Path</span>
+            <h1 class="text-5xl md:text-7xl font-serif mb-8 leading-tight text-black">
+                True Mastery: <br>
+                <span class="italic text-gray-500">Mindset. Mindfulness. Money.</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+                You’re not here by accident. You’re here because you’re ready to grow beyond average.
+                Our courses are designed for leaders who want to build sustainable success from the inside out.
+            </p>
+            <div
+                class="flex flex-col md:flex-row justify-center gap-6 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gold rounded-full"></span> Lifetime
+                    Access</span>
+                <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gold rounded-full"></span>
+                    Self-Paced</span>
+                <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gold rounded-full"></span> Instant
+                    Delivery</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-24 fade-in">
+                <div class="order-2 md:order-1">
+                    <div class="text-gold font-serif text-6xl opacity-20 mb-4">01</div>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold mb-6">Hack Your Mindset</h3>
+                    <p class="text-gray-600 leading-relaxed mb-8 font-light">
+                        <strong>Think like a high-performing leader.</strong> Learn the psychology behind success and
+                        master the mindset that drives consistent growth in both business and life.
+                    </p>
+                    <ul class="space-y-3 mb-8 text-sm text-gray-500">
+                        <li class="flex items-start gap-3"><span class="text-black font-bold">✓</span> Build unshakable
+                            self-belief.</li>
+                        <li class="flex items-start gap-3"><span class="text-black font-bold">✓</span> Rewire limiting
+                            beliefs instantly.</li>
+                        <li class="flex items-start gap-3"><span class="text-black font-bold">✓</span> Develop emotional
+                            resilience.</li>
+                    </ul>
+                    <div class="text-xs font-bold text-gray-400 uppercase tracking-widest">Value: €1,850</div>
+                </div>
+                <div
+                    class="order-1 md:order-2 course-card rounded-[2rem] bg-gray-50 aspect-video md:aspect-[4/3] relative overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop"
+                        alt="Abstract Gold Mindset" class="course-img w-full h-full object-cover">
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-24 fade-in">
+                <div class="order-2 md:order-2">
+                    <div class="text-gold font-serif text-6xl opacity-20 mb-4">02</div>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold mb-6">Money & Abundance</h3>
+                    <p class="text-gray-600 leading-relaxed mb-8 font-light">
+                        <strong>Money is energy.</strong> Shift from survival to abundance. Align your earning potential
+                        with your purpose and grow your income sustainably, without losing your peace.
+                    </p>
+                    <ul class="space-y-3 mb-8 text-sm text-gray-500">
+                        <li class="flex items-start gap-3"><span class="text-black font-bold">✓</span> Heal your
+                            relationship with money.</li>
+                        <li class="flex items-start gap-3"><span class="text-black font-bold">✓</span> Pricing
+                            psychology for premium offers.</li>
+                        <li class="flex items-start gap-3"><span class="text-black font-bold">✓</span> Attraction vs.
+                            Chasing strategies.</li>
+                    </ul>
+                    <div class="text-xs font-bold text-gray-400 uppercase tracking-widest">Value: €594</div>
+                </div>
+                <div
+                    class="order-1 md:order-1 course-card rounded-[2rem] bg-gray-50 aspect-video md:aspect-[4/3] relative overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1570303345338-e1f0eddf4946?q=80&w=2564&auto=format&fit=crop"
+                        alt="Liquid Gold Wealth" class="course-img w-full h-full object-cover">
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center fade-in">
+                <div class="order-2 md:order-1">
+                    <div class="text-gold font-serif text-6xl opacity-20 mb-4">03</div>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold mb-6">7-Day Mindfulness Challenge</h3>
+                    <p class="text-gray-600 leading-relaxed mb-8 font-light">
+                        <strong>You can’t scale chaos.</strong> Learn to regulate your emotions, stay grounded under
+                        pressure, and lead with calm confidence. Blends neuroscience with practical tools.
+                    </p>
+                    <ul class="space-y-3 mb-8 text-sm text-gray-500">
+                        <li class="flex items-start gap-3"><span class="text-black font-bold">✓</span> Regulate your
+                            nervous system.</li>
+                        <li class="flex items-start gap-3"><span class="text-black font-bold">✓</span> Daily practices
+                            for sharp focus.</li>
+                        <li class="flex items-start gap-3"><span class="text-black font-bold">✓</span> Lead from a place
+                            of calm power.</li>
+                    </ul>
+                    <div class="text-xs font-bold text-gray-400 uppercase tracking-widest">Value: €111</div>
+                </div>
+                <div
+                    class="order-1 md:order-2 course-card rounded-[2rem] bg-gray-50 aspect-video md:aspect-[4/3] relative overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1544367563-12123d8965cd?q=80&w=2564&auto=format&fit=crop"
+                        alt="Zen Stones Mindfulness" class="course-img w-full h-full object-cover">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-24 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-5xl font-serif mb-6">Results That Speak</h2>
+                <p class="text-gray-500 font-light">Join over 500+ students who have transformed their lives.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 fade-in">
+                    <div class="text-gold text-2xl mb-4">★★★★★</div>
+                    <p class="text-gray-600 text-sm italic mb-6">"My transformation working with Sofia is huge. I went
+                        from doubting myself to becoming a confident person who knows my value."</p>
+                    <div class="font-bold text-xs uppercase tracking-widest">- Eugenia M.</div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 fade-in delay-100">
+                    <div class="text-gold text-2xl mb-4">★★★★★</div>
+                    <p class="text-gray-600 text-sm italic mb-6">"Sofia's energy is infectious. The Mindset course
+                        helped me break through barriers I didn't even know I had."</p>
+                    <div class="font-bold text-xs uppercase tracking-widest">- Richard Morgan</div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 fade-in delay-200">
+                    <div class="text-gold text-2xl mb-4">★★★★★</div>
+                    <p class="text-gray-600 text-sm italic mb-6">"I finally understand how to price my offers. The Money
+                        Mindset module alone paid for the entire bundle 10x over."</p>
+                    <div class="font-bold text-xs uppercase tracking-widest">- Murielle P.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bundle" class="py-24 px-6 bg-black text-white relative overflow-hidden">
+
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold/10 blur-[120px] rounded-full pointer-events-none">
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10 fade-in">
+            <div
+                class="inline-flex items-center gap-2 border border-red-500/50 bg-red-900/20 px-6 py-2 rounded-full text-[10px] uppercase tracking-[0.2em] text-red-400 mb-8 animate-pulse">
+                <span class="w-2 h-2 bg-red-500 rounded-full"></span> Offer Ends Soon
+            </div>
+
+            <h2 class="text-4xl md:text-6xl font-serif mb-6">The Transformation Bundle</h2>
+            <p class="text-gray-400 text-lg font-light mb-12 max-w-2xl mx-auto">
+                Get all three courses. One decision. Lifetime access.
+                <br>
+                Build the foundation for a 6-figure life and business.
+            </p>
+
+            <div
+                class="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 mb-12 backdrop-blur-sm shadow-2xl relative">
+                <div
+                    class="absolute -top-6 -right-6 md:top-8 md:right-8 w-20 h-20 bg-gold text-black rounded-full flex items-center justify-center text-[8px] font-bold uppercase tracking-widest text-center shadow-lg border-4 border-black transform rotate-12">
+                    30 Day<br>Money<br>Back
+                </div>
+
+                <div class="flex flex-col gap-4 mb-8 text-sm text-gray-400 text-left md:text-center">
+                    <div class="flex justify-between md:justify-center gap-4">
+                        <span>Hack Your Mindset</span>
+                        <span class="line-through opacity-50">€1,850</span>
+                    </div>
+                    <div class="flex justify-between md:justify-center gap-4">
+                        <span>Money & Abundance Mindset</span>
+                        <span class="line-through opacity-50">€594</span>
+                    </div>
+                    <div class="flex justify-between md:justify-center gap-4">
+                        <span>7-Day Mindfulness Challenge</span>
+                        <span class="line-through opacity-50">€111</span>
+                    </div>
+                    <div class="h-px bg-white/10 w-full my-2"></div>
+                    <div class="flex justify-between md:justify-center gap-4 text-white font-bold text-lg">
+                        <span>Total Real Value</span>
+                        <span>€2,555</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="text-6xl md:text-8xl font-serif font-bold text-white mb-2">€49</div>
+                    <p class="text-gray-500 text-xs uppercase tracking-widest mb-8">One-time payment • Lifetime Access
+                    </p>
+
+                    <a href="https://book.stripe.com/dRmcN43577IN5cjetP73G1n" target="_blank"
+                        class="shimmer-btn w-full md:w-auto bg-white text-black px-16 py-6 rounded-xl font-bold uppercase tracking-[0.25em] text-xs hover:bg-gray-200 transition-all shadow-xl hover:-translate-y-1 mb-6">
+                        Start My Transformation
+                    </a>
+
+                    <div class="flex items-center gap-4 opacity-50 grayscale hover:grayscale-0 transition-all">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" class="h-4"
+                            alt="Visa">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" class="h-4"
+                            alt="Mastercard">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg"
+                            class="h-6" alt="Stripe">
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-[10px] text-gray-600 uppercase tracking-widest">
+                <span class="text-green-500">🔒 Secure Checkout</span> • Instant Access via Email
+            </p>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-serif text-center mb-12">Frequently Asked Questions</h2>
+
+            <div class="space-y-4">
+                <div class="faq-item">
+                    <button class="w-full flex justify-between items-center py-4 text-left font-medium"
+                        onclick="this.parentElement.classList.toggle('active')">
+                        <span>Is this suitable for beginners?</span>
+                        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content text-gray-500 text-sm">
+                        Absolutely. Whether you are just starting out or looking to scale, the mindset and money
+                        principles in this bundle are foundational for every level of success.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="w-full flex justify-between items-center py-4 text-left font-medium"
+                        onclick="this.parentElement.classList.toggle('active')">
+                        <span>Do I get lifetime access?</span>
+                        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content text-gray-500 text-sm">
+                        Yes! Once you purchase, you have lifetime access to all course materials, including any future
+                        updates we add to the modules.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="w-full flex justify-between items-center py-4 text-left font-medium"
+                        onclick="this.parentElement.classList.toggle('active')">
+                        <span>What if I am unhappy with the course?</span>
+                        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content text-gray-500 text-sm">
+                        We offer a 30-day money-back guarantee. If you do the work and don't feel a shift, email us for
+                        a full refund. No hard feelings.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white py-12 text-center border-t border-gray-100">
+        <div class="mb-8">
+            <span class="text-xl font-bold italic tracking-tighter uppercase font-sans">SOFIA KAKKAVA</span>
+        </div>
+        <div class="flex justify-center gap-6 mb-8 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">
+            <a href="index.html" class="hover:text-black">Home</a>
+            <a href="apply.html" class="hover:text-black">Mentorship</a>
+            <a href="courses.html" class="hover:text-black">Courses</a>
+            <a href="mailto:hello@sofiakakkava.com" class="hover:text-black">Contact</a>
+        </div>
+        <p class="text-[10px] uppercase tracking-[0.2em] text-gray-400">© 2026 Sofia Kakkava Consulting</p>
+    </footer>
+
+    <script>
+        // Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
